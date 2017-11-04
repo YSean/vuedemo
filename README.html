@@ -1014,147 +1014,116 @@ body .markdown-body
     page-break-after: avoid;
   }
 }
-</style><title>README</title></head><body><article class="markdown-body"><h1 id="vuedemo"><a name="user-content-vuedemo" href="#vuedemo" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>vuedemo</h1>
-<h2 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>项目简介</h2>
-<p>基于 vue.js 的前端开发环境，用于前后端分离后的单页应用开发，可以在开发时使用 ES Next、scss 等最新语言特性。项目包含：</p>
-<ul>
-<li>基础库: <code>vue.js</code>、<code>vue-router</code>、<code>vuex</code>、<code>whatwg-fetch</code></li>
-<li>编译/打包工具：<code>webpack</code>、<code>babel</code>、<code>node-sass</code></li>
-<li>单元测试工具：<code>karma</code>、<code>mocha</code>、<code>sinon-chai</code></li>
-<li>本地服务器：<code>express</code></li>
+</style><title>README</title></head><body><article class="markdown-body"><h3 id="vuejs-20"><a name="user-content-vuejs-20" href="#vuejs-20" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Vue.js 2.0实战项目</h3>
+<p>基于Vue + Vuex + Vue-router + Webpack 2.0<br />
+打造微信界面，实现了微信聊天、搜索、点赞、通讯录（快速导航）、个人中心、模拟对话、朋友圈、设置等功能。</p>
+<h3 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>技术栈</h3>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled checked> MVVM框架：Vue.js 2.0</li>
+<li class="task-list-item"><input type="checkbox" disabled checked> 状态管理：Vuex</li>
+<li class="task-list-item"><input type="checkbox" disabled checked> 移动端组件库：Mint-ui</li>
+<li class="task-list-item"><input type="checkbox" disabled checked> 前端路由：Vue-router</li>
+<li class="task-list-item"><input type="checkbox" disabled checked> 数据交互：Vue-resource</li>
+<li class="task-list-item"><input type="checkbox" disabled checked> 打包工具：webpack 2.0</li>
+<li class="task-list-item"><input type="checkbox" disabled checked> 环境配置：node + npm</li>
+<li class="task-list-item"><input type="checkbox" disabled checked> 语言：es6</li>
 </ul>
-<h2 id="_2"><a name="user-content-_2" href="#_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>目录结构</h2>
-<pre><code>├── README.md                       项目介绍
-├── index.html                      入口页面
-├── build                           构建脚本目录
-│   ├── build-server.js                 运行本地构建服务器，可以访问构建后的页面
-│   ├── build.js                        生产环境构建脚本
-│   ├── dev-client.js                   开发服务器热重载脚本，主要用来实现开发阶段的页面自动刷新
-│   ├── dev-server.js                   运行本地开发服务器
-│   ├── utils.js                        构建相关工具方法
-│   ├── webpack.base.conf.js            wabpack基础配置
-│   ├── webpack.dev.conf.js             wabpack开发环境配置
-│   └── webpack.prod.conf.js            wabpack生产环境配置
-├── config                          项目配置
-│   ├── dev.env.js                      开发环境变量
-│   ├── index.js                        项目配置文件
-│   ├── prod.env.js                     生产环境变量
-│   └── test.env.js                     测试环境变量
-├── mock                            mock数据目录
-│   └── hello.js
-├── package.json                    npm包配置文件，里面定义了项目的npm脚本，依赖包等信息
-├── src                             源码目录    
-│   ├── main.js                         入口js文件
-│   ├── app.vue                         根组件
-│   ├── components                      公共组件目录
-│   │   └── title.vue
-│   ├── assets                          资源目录，这里的资源会被wabpack构建
-│   │   └── images
-│   │       └── logo.png
-│   ├── routes                          前端路由
-│   │   └── index.js
-│   ├── store                           应用级数据（state）
-│   │   └── index.js
-│   └── views                           页面目录
-│       ├── hello.vue
-│       └── notfound.vue
-├── static                          纯静态资源，不会被wabpack构建。
-└── test                            测试文件目录（unit&amp;e2e）
-    └── unit                            单元测试
-        ├── index.js                        入口脚本
-        ├── karma.conf.js                   karma配置文件
-        └── specs                           单测case目录
-            └── Hello.spec.js
-</code></pre>
-<h2 id="_3"><a name="user-content-_3" href="#_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>环境安装</h2>
-<p>本项目依赖 node.js， 使用前先安装 node.js 和 cnpm（显著提升依赖包的下载速度）。<br />
-1. 自行下载并安装 node.js： <a href="https://nodejs.org/en/download/"><a href="https://nodejs.org/en/download/"><a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a></a></a><br />
-2. 然后安装 cnpm 命令：</p>
-<pre><code>    npm install -g cnpm --registry=https://registry.npm.taobao.org
-</code></pre>
-<h2 id="_4"><a name="user-content-_4" href="#_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>快速开始</h2>
-<pre><code>git clone https://github.com/hanan198501/vue-spa-template.git 
-cd vue-spa-template
-cnpm install
-npm run dev
-</code></pre>
-<h2 id="_5"><a name="user-content-_5" href="#_5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>命令列表：</h2>
-<pre><code>#开启本地开发服务器，监控项目文件的变化，实时构建并自动刷新浏览器，浏览器访问 http://localhost:8081
-npm run dev
+<h3 id="_2"><a name="user-content-_2" href="#_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>项目运行</h3>
+<pre><code>git clone https://github.com/caochangkui/wechat-by-vue.git
 
-#使用生产环境配置构建项目，构建好的文件会输出到 "dist" 目录，
-npm run build
+cd wechat-by-vue
 
-#运行构建服务器，可以查看构建的页面
-npm run build-server
+npm install
 
-#运行单元测试
-npm run unit
-</code></pre>
-<h2 id="_6"><a name="user-content-_6" href="#_6" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>前后端分离</h2>
-<p>项目基于 spa 方式实现前后端分离，服务器通过 nginx 区分前端页面和后端接口请求，分发到不同服务。前端物理上只有一个入口页面, 路由由前端控制（基于vue-router），根据不同的 url 加载相应数据和组件进行渲染。</p>
-<h2 id="mock"><a name="user-content-mock" href="#mock" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>接口 mock</h2>
-<p>前后端分离后，开发前需要和后端同学定义好接口信息（请求地址，参数，返回信息等），前端通过 mock 的方式，即可开始编码，无需等待后端接口 ready。<br />
-项目的本地开发服务器是基于 express 搭建的，通过 express 的中间件机制，我们已经在 dev-server 中添加了接口 mock 功能。<br />
-开发时，接口的 mock 数据统一放在 mock 目录下，每个文件内如下：</p>
-<pre><code>module.exports = {
+npm run dev //服务端运行，运行后访问 http://localhost:6868)
 
-  // 接口地址
-  api: '/api/hello',
+npm run build //项目打包 
 
-  // 返回数据 参考http://expressjs.com/zh-cn/4x/api.html
-  response: function (req, res) {
-    res.send(`
-      &lt;p&gt;hello vue!&lt;/p&gt;
-    `);
-  }
-}
 </code></pre>
-<h2 id="_7"><a name="user-content-_7" href="#_7" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>模块化</h2>
-<p>开发时可以使用 ES2015 module 语法，构建时每个文件会编译成 amd 模块。</p>
-<h2 id="_8"><a name="user-content-_8" href="#_8" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>组件化</h2>
-<p>整个应用通过 vue 组件的方式搭建起来，通过 vue-router 控制相应组件的展现，组件树结构如下：</p>
-<pre><code>app.vue                         根组件（整个应用只有一个）
-    ├──view1.vue                    页面级组件，放在 views 目录里面，有子组件时，可以建立子目录
-    │   ├──component1.vue               功能组件，公用的放在 components 目录，否则放在 views 子目录
-    │   ├──component2.vue
-    │   └──component3.vue
-    ├──view2.vue
-    │   ├──component1.vue
-    │   └──component4.vue
-    └──view3.vue
-        ├──component5.vue
-        ……
-</code></pre>
-<h2 id="_9"><a name="user-content-_9" href="#_9" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>单元测试</h2>
-<p>可以为每个组件编写单元测试，放在 <code>test/unit/specs</code> 目录下面, 单元测试用例的目录结构建议和测试的文件保持一致（相对于src），每个测试用例文件名以 <code>.spec.js</code>结尾。<br />
-执行 <code>npm run unit</code> 时会遍历所有的 <code>spec.js</code> 文件，产出测试报告在 <code>test/unit/coverage</code> 目录。</p>
-<h2 id="_10"><a name="user-content-_10" href="#_10" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>联调方式</h2>
-<p>前后端分离后，由于服务端和前端的开发环境处于2台不同的机器上，前端的异步请求需要代理到后端机器中。<br />
-联调的时候，只需通过 proxy 参数运行 dev 脚本即可，所有 mock 目录下定义的接口将会转发到 proxy 参数指定的机器：</p>
-<pre><code># 172.16.36.90:8083 为后端机器的环境地址
-npm run dev -- --proxy=172.16.36.90:8083
-</code></pre>
-<p>这样，如果 mock 目录下有定义了接口 /api/hello ，将会转发到 <a href="http://172.16.36.90/:8083/api/hello">http://172.16.36.90/:8083/api/hello</a></p>
-<h2 id="_11"><a name="user-content-_11" href="#_11" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>术语</h2>
-<p>spa模式:单页Web应用（single page web application，SPA），就是只有一张Web页面的应用，是加载单个HTML 页面并在用户与应用程序交互时动态更新该页面的Web应用程序.</p>
-<p>mock测试:就是在测试过程中，对于某些不容易构造或者不容易获取的对象，用一个虚拟的对象来创建以便测试的测试方法。</p>
-<p>AMD是&rdquo;Asynchronous Module Definition&rdquo;的缩写，意思就是&rdquo;异步模块定义&rdquo;。它采用异步方式加载模块，模块的加载不影响它后面语句的运行。所有依赖这个模块的语句，都定义在一个回调函数中，等到加载完成之后，这个回调函数才会运行。</p>
-<h2 id="_12"><a name="user-content-_12" href="#_12" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>相关资源</h2>
-<ul>
-<li>QQ群：568815621</li>
-<li>vue.js 官网：<a href="https://vuejs.org/"><a href="https://vuejs.org/"><a href="https://vuejs.org/">https://vuejs.org/</a></a></a></li>
-<li>vue.js 中文网： <a href="http://vuefe.cn/"><a href="http://vuefe.cn/"><a href="http://vuefe.cn/">http://vuefe.cn/</a></a></a></li>
-<li>vue-router 文档：<a href="http://router.vuejs.org/zh-cn/index.html"><a href="http://router.vuejs.org/zh-cn/index.html/"><a href="http://router.vuejs.org/zh-cn/index.html/">http://router.vuejs.org/zh-cn/index.html/</a></a></a></li>
-<li>vuex 文档：<a href="http://vuex.vuejs.org/"><a href="http://vuex.vuejs.org/"><a href="http://vuex.vuejs.org/">http://vuex.vuejs.org/</a></a></a></li>
-<li>webpack 文档：<a href="https://webpack.github.io/docs/"><a href="https://webpack.github.io/docs/"><a href="https://webpack.github.io/docs/">https://webpack.github.io/docs/</a></a></a></li>
-<li>ES2015 入门教程：<a href="http://es6.ruanyifeng.com/"><a href="http://es6.ruanyifeng.com/"><a href="http://es6.ruanyifeng.com/">http://es6.ruanyifeng.com/</a></a></a></li>
-<li>scss 文档：<a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html"><a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html"><a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html">http://sass-lang.com/documentation/file.SASS_REFERENCE.html</a></a></a></li>
-<li>mocha 文档: <a href="http://mochajs.org/"><a href="http://mochajs.org/"><a href="http://mochajs.org/">http://mochajs.org/</a></a></a></li>
-<li>express 中文官网：<a href="http://expressjs.com/zh-cn/"><a href="http://expressjs.com/zh-cn/"><a href="http://expressjs.com/zh-cn/">http://expressjs.com/zh-cn/</a></a></a> </li>
-<li>ajax库：[<a href="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js">https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js</a>]</li>
-<li>lodash库：[<a href="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js">https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js</a>]</li>
-<li>velocity 库：[<a href="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js">https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js</a>]<br />
-<!-- 因为 AJAX 库和通用工具的生态已经相当丰富，Vue 核心代码没有重复 --><br />
-<!-- 提供这些功能以保持精简。这也可以让你自由选择自己更熟悉的工具。 --></li>
-</ul></article></body></html>
+
+<h3 id="_3"><a name="user-content-_3" href="#_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>项目预览</h3>
+<p><a href="https://caochangkui.github.io/wechat-by-cck/index.html">点击这里预览项目</a> （在chrome手机模式下预览）</p>
+<h3 id="_4"><a name="user-content-_4" href="#_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>移动端扫描下方二维码可直接打开</h3>
+<p><img alt="" src="https://raw.githubusercontent.com/caochangkui/common-resources/master/wechat-img/code.png" /></p>
+<h1 id="_5"><a name="user-content-_5" href="#_5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>页面部分截图</h1>
+<h3 id="_6"><a name="user-content-_6" href="#_6" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>微信聊天（每个联系人聊天后可自动添加到首页）</h3>
+<p><img src="https://raw.githubusercontent.com/caochangkui/common-resources/master/wechat-img/screenshot/GIF111.gif" width="225" height="400" alt="" /></p>
+<h3 id="_7"><a name="user-content-_7" href="#_7" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>朋友圈、点赞</h3>
+<p><img src="https://raw.githubusercontent.com/caochangkui/common-resources/master/wechat-img/screenshot/GIF222.gif" width="225" height="400"/> </p>
+<h3 id="_8"><a name="user-content-_8" href="#_8" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>个人中心、相册、钱包、卡包、设置</h3>
+<p><img src="https://raw.githubusercontent.com/caochangkui/common-resources/master/wechat-img/screenshot/GIF333.gif" width="225" height="400"/> </p>
+<h1 id="_9"><a name="user-content-_9" href="#_9" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>项目树</h1>
+<pre><code>.
+├── README.md
+├── build                                              // 项目打包路径
+│   ├── build.js
+│   ├── check-versions.js
+│   ├── dev-client.js
+│   ├── dev-server.js
+│   ├── utils.js
+│   ├── vue-loader.conf.js
+│   ├── webpack.base.conf.js
+│   ├── webpack.dev.conf.js
+│   └── webpack.prod.conf.js
+├── config                                            // 上线项目文件
+│   ├── dev.env.js
+│   ├── index.js
+│   └── prod.env.js
+├── index.html
+├── package.json                                      // 配置信息
+└── src                                               // 源码目录
+    ├── App.vue                                       // 输出文件
+    ├── main.js                                       // 入口文件
+    ├── assets                                        // 公用图片
+    ├── base                                          // 存放通用组件的组件库
+    │   ├── loading                                   // 栏加载组件
+    │   └── scroll                                    // 滑屏文件
+    ├── components                                    // 应用组件的组件库
+    │   ├── chat 
+    │   │   └── chat.vue                              // 微信组件
+    │   ├── address
+    │   │   └── address.vue                           // 通讯录组件
+    │   │   └── address-detail
+    │   │       └── address-detail.vue                // 通讯录详情组件
+    │   │       └── address-more
+    │   │           └── address-more.vue              // 通讯录更多详情组件
+    │   ├── find
+    │   │   ├── find.vue                              // 发现组件
+    │   │   ├── find-circle
+    │   │   │   └── find-circle.vue                   // 朋友圈组件
+    │   │   ├── scan
+    │   │   │   └── scan.vue                          // 扫一扫组件
+    │   │   └── shake
+    │   │       └── shake.vue                         // 摇一摇组件
+    │   ├── me
+    │   │   ├── me.vue                                // 个人中心组件
+    │   │   ├── card
+    │   │   │   └── card.vue                          // 卡包组件
+    │   │   ├── money
+    │   │   │   └── money.vue                         // 钱包组件
+    │   │   ├── collection
+    │   │   │   └── collection.vue                    // 收藏组件
+    │   │   ├── album
+    │   │   │   └── album.vue                         // 相册组件
+    │   │   └── set
+    │   │       └── set.vue                           // 设置组件
+    │   ├── chatroom
+    │   │   └── chatroom.vue                          // 聊天窗口组件
+    │   │   └── chatroom-user
+    │   │       └── chatroom-user.vue                 // 聊天者的个人信息组件
+    │   ├── search
+    │   │   └── search.vue                            // 搜索组件
+    │   ├── plus
+    │   │   └── plus.vue                              // 更多组件
+    ├── router
+    │   └── index.js                                  // 路由控制中心
+    └── store                                         //  存放vuex相关代码
+        ├── actions.js                                //  异步操作，或对mutation做一些封装
+        ├── getters.js                                //  获取state，并对其做一些映射 
+        ├── index.js                                  // vuex入口文件
+        ├── mutation-types.js                         // 存放与mutatiom相关的常量
+        ├── mutations.js                              //  处理数据逻辑方法的集合 
+        └── state.js                                  //  管理所有状态
+
+
+</code></pre></article></body></html>

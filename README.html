@@ -1041,6 +1041,34 @@ npm run build //项目打包
 
 </code></pre>
 
+<h3 id="chrome-httpwwwcnblogscommmzuo-798p6928532html"><a name="user-content-chrome-httpwwwcnblogscommmzuo-798p6928532html" href="#chrome-httpwwwcnblogscommmzuo-798p6928532html" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>配置chrome调试 <a href="http://www.cnblogs.com/mmzuo-798/p/6928532.html">http://www.cnblogs.com/mmzuo-798/p/6928532.html</a></h3>
+<p>以下是mac os下的操作步骤<br />
+1 git下载vue-devtools: <br />
+2 安装vue-devtools<br />
+3 打开shells&gt;chrome&gt;src&gt;manifest.json 把里面的&rdquo;persistent&rdquo;: false改为true</p>
+<p><pre><code>git clone https://github.com/vuejs/vue-devtools
+cd vue-devtools
+npm install
+cd shells/chrome/src
+vi manifest.json
+-- 修改manifest.json,把里面的&quot;persistent&quot;: false改为true，如下图所示
+-- 修改后需要重新编译
+cd ../../../
+npm run build
+</code></pre><br />
+<img src="http://images2015.cnblogs.com/blog/826333/201706/826333-20170601135617524-1763706881.png"/></p>
+<p>4 在chrome里面添加扩展程序<br />
+在浏览器栏输入 chrome://extensions/<br />
+<img src="http://images2015.cnblogs.com/blog/826333/201706/826333-20170601135702555-1571279699.png"/><br />
+5 在Vue文件中加入Vue.config.devtools<br />
+<pre><code>Vue.config.devtools = true; //这步很重要
+new Vue({
+    el: '#app',
+    data: {
+        a: 123,
+    }
+}); 
+</code></pre></p>
 <h1 id="vue"><a name="user-content-vue" href="#vue" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>vue组件库</h1>
 <h3 id="mint-ui-vue"><a name="user-content-mint-ui-vue" href="#mint-ui-vue" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>mint-ui vue组件库</h3>
 <p>饿了么提供的组件库 <a href="https://github.com/ElemeFE/mint-ui">https://github.com/ElemeFE/mint-ui</a> </p>
@@ -1059,7 +1087,8 @@ npm run build //项目打包
 <h3 id="webpack-merge"><a name="user-content-webpack-merge" href="#webpack-merge" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>webpack-merge 文件合并</h3>
 <h3 id="copy-webpack-plugin"><a name="user-content-copy-webpack-plugin" href="#copy-webpack-plugin" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>copy-webpack-plugin</h3>
 <h3 id="extract-text-webpack-plugin"><a name="user-content-extract-text-webpack-plugin" href="#extract-text-webpack-plugin" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>extract-text-webpack-plugin 文本抽离</h3>
-<p>该插件的主要是为了抽离css样式，防止将样式打包在js</p>
+<p>该插件的主要是为了抽离css样式，防止将样式打包在js.<br />
+  在打包之前将import的css文件,vue里面的style都抽离出来放到css文件当中,js到时再根据css的名字进行获取</p>
 <h3 id="html-webpack-plugin"><a name="user-content-html-webpack-plugin" href="#html-webpack-plugin" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>html-webpack-plugin</h3>
 <h3 id="optimize-css-assets-webpack-plugin"><a name="user-content-optimize-css-assets-webpack-plugin" href="#optimize-css-assets-webpack-plugin" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>optimize-css-assets-webpack-plugin</h3>
 <h3 id="path"><a name="user-content-path" href="#path" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>path 路径相关插件</h3>
@@ -1073,7 +1102,7 @@ npm run build //项目打包
 <h3 id="css-loader"><a name="user-content-css-loader" href="#css-loader" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>css-loader</h3>
 <h3 id="url-loader"><a name="user-content-url-loader" href="#url-loader" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>url-loader</h3>
 <h3 id="file-loader"><a name="user-content-file-loader" href="#file-loader" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>file-loader</h3>
-<h3 id="eslint"><a name="user-content-eslint" href="#eslint" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>eslint</h3>
+<h3 id="eslint"><a name="user-content-eslint" href="#eslint" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>eslint 代码格式检测工具(已注释)</h3>
 <pre><code>eslint (是一个用来识别 ECMAScript 并且按照规则给出报告的代码检测工具,使用它可以避免低级错误和统一代码的风格)
 eslint规范 http://www.cnblogs.com/my93/p/5681879.html
 </code></pre>

@@ -29,6 +29,38 @@ npm run dev //服务端运行，运行后访问 http://localhost:6868)
 npm run build //项目打包 
 
 ```
+### 配置chrome调试 http://www.cnblogs.com/mmzuo-798/p/6928532.html
+以下是mac os下的操作步骤
+1 git下载vue-devtools: 
+2 安装vue-devtools
+3 打开shells>chrome>src>manifest.json 把里面的"persistent": false改为true
+
+```
+git clone https://github.com/vuejs/vue-devtools
+cd vue-devtools
+npm install
+cd shells/chrome/src
+vi manifest.json
+-- 修改manifest.json,把里面的"persistent": false改为true，如下图所示
+-- 修改后需要重新编译
+cd ../../../
+npm run build
+```
+<img src="http://images2015.cnblogs.com/blog/826333/201706/826333-20170601135617524-1763706881.png"/>
+
+4 在chrome里面添加扩展程序
+在浏览器栏输入 chrome://extensions/
+<img src="http://images2015.cnblogs.com/blog/826333/201706/826333-20170601135702555-1571279699.png"/>
+5 在Vue文件中加入Vue.config.devtools
+```
+Vue.config.devtools = true; //这步很重要
+new Vue({
+    el: '#app',
+    data: {
+        a: 123,
+    }
+}); 
+```
 
 # vue组件库
 ### mint-ui vue组件库
@@ -48,7 +80,8 @@ npm run build //项目打包
 ### webpack-merge 文件合并
 ### copy-webpack-plugin
 ### extract-text-webpack-plugin 文本抽离
-  该插件的主要是为了抽离css样式，防止将样式打包在js
+  该插件的主要是为了抽离css样式，防止将样式打包在js.
+  在打包之前将import的css文件,vue里面的style都抽离出来放到css文件当中,js到时再根据css的名字进行获取
 ### html-webpack-plugin
 ### optimize-css-assets-webpack-plugin
 
@@ -66,7 +99,7 @@ npm run build //项目打包
 ### url-loader
 ### file-loader
 
-### eslint 
+### eslint 代码格式检测工具(已注释)
 	eslint (是一个用来识别 ECMAScript 并且按照规则给出报告的代码检测工具,使用它可以避免低级错误和统一代码的风格)
 	eslint规范 http://www.cnblogs.com/my93/p/5681879.html
 

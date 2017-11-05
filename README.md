@@ -1,10 +1,9 @@
 ### Vue.js 2.0实战项目
 
 基于Vue + Vuex + Vue-router + Webpack 2.0
-打造微信界面，实现了微信聊天、搜索、点赞、通讯录（快速导航）、个人中心、模拟对话、朋友圈、设置等功能。
+微信相关界面，实现了个人中心、通讯录（快速导航）、搜索
 
 ### 技术栈
-
 
 - [x] MVVM框架：Vue.js 2.0
 - [x] 状态管理：Vuex
@@ -30,33 +29,47 @@ npm run dev //服务端运行，运行后访问 http://localhost:6868)
 npm run build //项目打包 
 
 ```
-### 项目预览 
 
-[点击这里预览项目](https://caochangkui.github.io/wechat-by-cck/index.html) （在chrome手机模式下预览）
+# vue组件库
+### mint-ui vue组件库
+  饿了么提供的组件库 https://github.com/ElemeFE/mint-ui 
+###
 
+# webpack相关插件介绍
+### npm nodejs命令行工具
+   npm帮助文档  http://nodejs.cn/api/buffer.html#buffer_the_zero_fill_buffers_command_line_option
+   npm5注意事项 http://www.topjishu.com/11681.html
+### webpack 打包工具
+	帮助文档 http://www.css88.com/doc/webpack2/concepts/output
+### webpack-bundle-analyzer
+### webpack-dev-middleware
+### webpack-hot-middleware
+### http-proxy-middleware
+### webpack-merge 文件合并
+### copy-webpack-plugin
+### extract-text-webpack-plugin 文本抽离
+  该插件的主要是为了抽离css样式，防止将样式打包在js
+### html-webpack-plugin
+### optimize-css-assets-webpack-plugin
 
-### 移动端扫描下方二维码可直接打开
+### path 路径相关插件
+### ora 在命令行显示loading
+### semver 版本号对比
 
-![](https://raw.githubusercontent.com/caochangkui/common-resources/master/wechat-img/code.png)
+### vue-style-loader
+### vue-css-loader
+### vue-template-compiler
+### vue-lazyload
+### vue-resource
 
+### css-loader
+### url-loader
+### file-loader
 
+### eslint 
+	eslint (是一个用来识别 ECMAScript 并且按照规则给出报告的代码检测工具,使用它可以避免低级错误和统一代码的风格)
+	eslint规范 http://www.cnblogs.com/my93/p/5681879.html
 
-# 页面部分截图
-
-### 微信聊天（每个联系人聊天后可自动添加到首页）
-
-<img src="https://raw.githubusercontent.com/caochangkui/common-resources/master/wechat-img/screenshot/GIF111.gif" width="225" height="400" alt="" />
-
-
-### 朋友圈、点赞
-
-<img src="https://raw.githubusercontent.com/caochangkui/common-resources/master/wechat-img/screenshot/GIF222.gif" width="225" height="400"/> 
-
-### 个人中心、相册、钱包、卡包、设置
-
-<img src="https://raw.githubusercontent.com/caochangkui/common-resources/master/wechat-img/screenshot/GIF333.gif" width="225" height="400"/> 
-
- 
 
 # 项目树
 ```
@@ -131,7 +144,6 @@ npm run build //项目打包
         ├── mutation-types.js                         // 存放与mutatiom相关的常量
         ├── mutations.js                              //  处理数据逻辑方法的集合 
         └── state.js                                  //  管理所有状态
-
 
 ```
 

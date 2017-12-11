@@ -1,22 +1,24 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Chat from '../components/chat/chat'
-import Search from '../components/search/search'
-import Address from '../components/address/address'
-import Projects from '../components/projects/projects'
-import Me from '../components/me/me'
-// import Chatroom from '../components/chatroom/chatroom'
-// import AddressDetail from '../components/address/address-detail/address-detail'
-// import FriendCircle from '../components/find/friend-circle/friend-circle'
-// import Scan from '../components/find/scan/scan'
-// import Shake from '../components/find/shake/shake'
-// import ChatroomUser from '../components/chatroom/chatroom-user/chatroom-user'
-// import AddressMore from '../components/address/address-detail/address-more/address-more'
-// import Money from '../components/me/money/money'
-// import Collection from '../components/me/collection/collection'
-// import Album from '../components/me/album/album'
-// import Card from '../components/me/card/card'
-// import Set from '../components/me/set/set'
+import Chat from '../pages/chat/chat'
+import Search from '../pages/search/search'
+import Address from '../pages/address/address'
+import Projects from '../pages/projects/projects'
+import Me from '../pages/me/me'
+import Home from '../pages/home/home'
+import Login from '../pages/login/login'
+// import Chatroom from '../pages/chatroom/chatroom'
+// import AddressDetail from '../pages/address/address-detail/address-detail'
+// import FriendCircle from '../pages/find/friend-circle/friend-circle'
+// import Scan from '../pages/find/scan/scan'
+// import Shake from '../pages/find/shake/shake'
+// import ChatroomUser from '../pages/chatroom/chatroom-user/chatroom-user'
+// import AddressMore from '../pages/address/address-detail/address-more/address-more'
+// import Money from '../pages/me/money/money'
+// import Collection from '../pages/me/collection/collection'
+// import Album from '../pages/me/album/album'
+// import Card from '../pages/me/card/card'
+// import Set from '../pages/me/set/set'
 
 Vue.use(Router)
 
@@ -24,11 +26,19 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/chat'
+      redirect: '/home'
+    },
+    {
+      path: '/home',
+      component: Home
     },
     {
       path: '/search',
       component: Search
+    },
+    {
+      path: '/login',
+      component: Login
     },
     {
       path: '/chat',  // 第一栏：微信
